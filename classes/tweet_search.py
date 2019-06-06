@@ -76,7 +76,7 @@ def get_twitter_data_search(last_id = -1):
 
 
 searched_tweets = []
-def get_twitter_data_cursor(last_id = -1, since_date = "2019-06-05", file_name = "tweet_aux"):
+def get_twitter_data_cursor(last_id = -1, since_date = "2019-06-07", file_name = "tweet_aux"):
     since_date = since_date
     last_id = last_id
     query = "#guatemala"
@@ -144,6 +144,7 @@ def periodic_work(interval):
         time.sleep(interval)
 
 def periodic_work_cursor(interval = 30):
+    work_space = '.\\storage\\'
     file_name = 'tweet'+str(datetime.now().strftime("%Y-%m-%d %H_%M_%S"))
     last_id = 0
     fetch_count = 0

@@ -5,6 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: Run File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console":"integratedTerminal",
+            "stopOnEntry" :true,
+            "env": "${workspaceFolder}\\.env\\Scripts\\activateTuMadre.bat"
+        },
+        {
             "name": "Python: Main",
             "type": "python",
             "request": "launch",
