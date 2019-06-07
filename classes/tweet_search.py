@@ -3,6 +3,8 @@ import time
 import csv
 import datetime
 
+import service.data_service as data_svc
+
 
 # twitter setup
 consumer_key = "3cSaGgMXZGNtHw2nGMzS67oZ0"
@@ -51,6 +53,7 @@ def get_twitter_data_search(last_id = -1):
             # depending on TweepError.code, one may want to retry or wait
             # to keep things simple, we will give up on an error
             print (e)
+            print ("error")
             break
     twit_count = 0
     for tweet in searched_tweets:
@@ -79,7 +82,7 @@ searched_tweets = []
 def get_twitter_data_cursor(last_id = -1, since_date = "2019-06-07", file_name = "tweet_aux"):
     since_date = since_date
     last_id = last_id
-    query = "#guatemala"
+    query = "guatemala"
     max_tweets = 1000
     max_id = 0
     searched_tweets = []
@@ -114,7 +117,10 @@ def get_twitter_data_cursor(last_id = -1, since_date = "2019-06-07", file_name =
         
         max_id = tweet.id
         (print("initial id: ",max_id) if twit_count == 0 else "")
-        csvWriter.writerow([tweet.created_at, max_id, tweet.full_text.encode('utf-8')])
+        author_info = {"name": tweet.author.name, "location": tweet.author.location}
+        #date of creation / tweet id / author info / hastags / symbols / urls / retweet / text
+        #csvWriter.writerow([tweet.created_at, tweet.id, author_info, tweet.entities["hashtags"], tweet.entities["symbols"], tweet.entities["urls"], tweet.retweet_count, tweet.full_text.encode('utf-8')])
+        data_svc.register_tweet(str(tweet.id), tweet.created_at, author_info, tweet.entities["hashtags"], tweet.entities["symbols"], tweet.entities["urls"], tweet.entities["user_mentions"], tweet.retweet_count, str(tweet.full_text.encode('utf-8')))
         twit_count += 1
     
     csvFile.close()
@@ -145,22 +151,21 @@ def periodic_work(interval):
 
 def periodic_work_cursor(interval = 30):
     work_space = '.\\storage\\'
-    file_name = 'tweet'+str(datetime.now().strftime("%Y-%m-%d %H_%M_%S"))
+    file_name = work_space+'tweet'+str(datetime.now().strftime("%Y-%m-%d %H_%M_%S"))
     last_id = 0
     fetch_count = 0
     while True:
-        print("fetch count: ", fetch_count)
-        fetch_count += 1
-        last_id = get_twitter_data_cursor(last_id = last_id, since_date= "2019-03-5")
+        last_id = get_twitter_data_cursor(last_id = last_id, since_date= "2019-03-6", file_name= file_name)
         time.sleep(interval)
-
+        fetch_count += 1
+        print("fetch count: ", fetch_count)
 
  # get data every couple of minutes
 
-def main():
+def main_tweet_search():
     # searched_tweets = []
     #get_twitter_data_search(-1)
     periodic_work_cursor(30) 
     # last_id = get_twitter_data_cursor(since_date= "2019-06-05")
     # get_twitter_data_cursor(last_id= last_id, since_date= "2019-06-04")
-main()
+# main_tweet_search()

@@ -12,7 +12,8 @@ from data.tweet import Tweet
 
 
 
-def register_tweet(text: Entity, typeObjUri: str) -> TypeObj:
+
+def register_tweet(tweet_id, tweet_date, author_info, hashtag, symbols, user_mensions, urls, retweet, text:str) -> Tweet:
     """add a type to a entity
         args*:
             entity: Entity
@@ -23,13 +24,22 @@ def register_tweet(text: Entity, typeObjUri: str) -> TypeObj:
             typeObj
                 return the typeObj registered
     """
-    typeObj = TypeObj()
-    typeObj.entity_id = entity.id
-    typeObj.typeObjUri = typeObjUri
-    typeObj.save()
-    
-    #entity = Entity.objects(id = entity.id).first()
-    entity.typeObj_ids.append(typeObj.id)
-    entity.save()
 
-    return typeObj
+    tweet = Tweet()
+
+    tweet.tweet_id = tweet_id
+    tweet.tweet_date = tweet_date
+    tweet.author_info = author_info
+    tweet.hashtag = hashtag
+    tweet.symbols = symbols
+    tweet.urls = urls
+    tweet.retweet = retweet
+    tweet.hastags = []
+    tweet.user_mensions = user_mensions
+    tweet.text = text
+    tweet.save()    
+    #entity = Entity.objects(id = entity.id).first()
+    # entity.typeObj_ids.append(typeObj.id)
+    # entity.save()
+
+    return tweet
