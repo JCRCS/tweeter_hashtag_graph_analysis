@@ -1,17 +1,19 @@
 import datetime
 import mongoengine
 
-class Space(mongoengine.Document):
-    """ this is the Space object that contains tweeters id
+class Node(mongoengine.Document):
+    """ this is the Hashtag object that contains
         *args:
+                node_type_id: id
                 name: str
-                tweets: [tweet_id]
     """
+    node_type_id = mongoengine.ObjectIdField()
+    
     registered_date = mongoengine.DateTimeField(default=datetime.datetime.now)
     name = mongoengine.StringField(required=True)
-    tweets = mongoengine.ListField()
+    
 
     meta = {
         'db_alias': 'core',
-        'collection': 'space'
+        'collection': 'node'
     }

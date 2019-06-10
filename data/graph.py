@@ -8,6 +8,7 @@ class Graph(mongoengine.Document):
     """
     registered_date = mongoengine.DateTimeField(default=datetime.datetime.now)
     name = mongoengine.StringField(required=True)
+    edges = mongoengine.ListField()
 
     meta = {
         'db_alias': 'core',

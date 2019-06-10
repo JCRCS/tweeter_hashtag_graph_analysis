@@ -2,21 +2,28 @@ import tweepy
 import time
 import csv
 import datetime
-from datetime import datetime, timedelta
+from datetime import timedelta
 
-import service.data_service as data_svc
+# import service.data_service as data_svc
+from service.data_service import *
 
 class Tweet_hastag_fetcher():
-    def __init__(self):
-        self.data_svc = data_svc.Data_service()
+    def __init__(self, space = None):
+        self.data_svc = Data_service()
         self.tweeter_api = self.tweeter_init()
         searched_tweets = [] 
+        self.space = space
         pass
     
 
     def run(self):  
         print("hello_world")
         self.periodic_work_cursor(30)
+
+    def one_run(self):  
+        print("test fetcher (one_work)")
+        self.one_work_cursor(5)
+        
         
         
 
@@ -40,7 +47,7 @@ class Tweet_hastag_fetcher():
 
     def periodic_work_cursor(self, interval = 30):
         work_space = '.\\storage\\'
-        file_name = work_space+'tweet'+str(datetime.now().strftime("%Y-%m-%d %H_%M_%S"))
+        file_name = work_space+'tweet'+str(datetime.datetime.now().strftime("%Y-%m-%d %H_%M_%S"))
         last_id = 0
         fetch_count = 0
         while True:
@@ -48,16 +55,29 @@ class Tweet_hastag_fetcher():
             time.sleep(interval)
             fetch_count += 1
             print("fetch count: ", fetch_count)
+    
+    def one_work_cursor(self, interval = 30):
+        work_space = '.\\storage\\'
+        file_name = work_space+'tweet'+str(datetime.datetime.now().strftime("%Y-%m-%d %H_%M_%S"))
+        last_id = 0
+        fetch_count = 0
+        #get max tweet id 
+        # get min tweet id 
+        #
+        last_id = self.get_twitter_data_cursor(last_id = last_id, since_date= "2019-06-9", file_name= file_name)
+        time.sleep(interval)
+        fetch_count += 1
+        print("fetch count: ", fetch_count)
 
     # get data every couple of minutes
     def get_twitter_data_cursor(self, last_id = -1, since_date = "2019-06-07", file_name = "tweet_aux"):
         since_date = since_date
         last_id = last_id
         query = "guatemala"
-        max_tweets = 1000
+        max_tweets = 10
         max_id = 0
         searched_tweets = []
-        print(str(datetime.now()))
+        print(str(datetime.datetime.now()))
         csvFile = open(file_name+'.csv', 'a', newline = '')
         #Use csv Writer
         csvWriter = csv.writer(csvFile)
@@ -92,6 +112,7 @@ class Tweet_hastag_fetcher():
             #date of creation / tweet id / author info / hastags / symbols / urls / retweet / text
             #csvWriter.writerow([tweet.created_at, tweet.id, author_info, tweet.entities["hashtags"], tweet.entities["symbols"], tweet.entities["urls"], tweet.retweet_count, tweet.full_text.encode('utf-8')])
             self.data_svc.register_tweet(
+                            space = self.space,
                             tweet_id = str(tweet.id),
                             tweet_date = tweet.created_at, 
                             author_info = author_info, 

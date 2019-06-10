@@ -6,7 +6,8 @@ class Tweet(mongoengine.Document):
     """ this is the Tweet object that contains
      #date of creation / tweet id / author info / hastags / symbols / urls / retweet / text
         *args:
-                 tweet_id: str
+                space: space
+                tweet_id: str
                 tweet_date: DateTime
                 author_info: {}
                 hashtag: []
@@ -15,12 +16,13 @@ class Tweet(mongoengine.Document):
                 urls: []
                 retweet: Int 
                 text: str
-                id_tweet: str
                 text: {columnId : column}
+                hashtag_nodes: List[Node_id]
     """
-    
-    registered_date = mongoengine.DateTimeField(default=datetime.datetime.now)
+    space_id = mongoengine.ObjectIdField()
     tweet_id = mongoengine.StringField(required=True)
+
+    registered_date = mongoengine.DateTimeField(default=datetime.datetime.now)
     tweet_date = mongoengine.DateTimeField()
     author_info = mongoengine.DictField()
     hashtag = mongoengine.ListField()
@@ -28,8 +30,9 @@ class Tweet(mongoengine.Document):
     user_mensions = mongoengine.ListField()
     urls = mongoengine.ListField()
     retweet = mongoengine.IntField()
-    hastags = mongoengine.ListField()
     text = mongoengine.StringField()
+
+    hashtag_nodes = mongoengine.ListField()
     
 
     meta = {
