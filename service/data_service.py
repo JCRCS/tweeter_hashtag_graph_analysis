@@ -3,6 +3,7 @@ import bson
 from typing import List
 import pandas as pd
 import re
+import numpy as np
 
  
 from data.graph import Graph
@@ -50,18 +51,21 @@ class Data_service():
                 graph:Graph
                     the graph with the edges created
         """
+        stored_edges = []
         for iEdge in edges:
-            self.register_edge(graph, iEdge)
-        return graph
+            stored_edge = self.register_edge(graph, iEdge)
+            stored_edges.append(stored_edge) if stored_edge != None else None
+        return stored_edges
     
     def register_edge(self, graph: Graph, edge: tuple) -> Graph:
-        if list(edge) not in graph.edges:
-            print (f"{edge} didn't exists")
+        if edge not in graph.edges:
+            #print (f"{edge} didn't exists")
             graph.edges.append(edge)
             graph.save()
+            return edge
         else:
-            print(f"{edge} edge all ready exist")
-        return graph
+            pass#print(f"{edge} edge all ready exist")
+        
 
     
     def register_node_type(self, name:str) -> Node_type:
@@ -75,7 +79,7 @@ class Data_service():
         #IF node_type all ready exists: RETURN all ready exists note_type
         node_type = Node_type.objects(name = name).first()
         if node_type != None:
-            print("node_type all ready exists")
+            #print("node_type all ready exists")
             return node_type
         else:
             pass
@@ -84,11 +88,25 @@ class Data_service():
         node_type.save()
         return node_type
     
-    def register_node(self, name: str, node_type: Node_type, node_type_id = 0) -> Node:
+    def register_node(self, name: str, node_type: Node_type,  node_type_id = 0, root = "") -> Node:
         """ add a node with a node_type
             *args:
                 node_type: Node_type
          """
+        def register_root( node: Node, root = ""):
+            if root is None:
+                pass
+                #print(f"node: {node.name}, doesn't have root")
+            elif root in node.roots:
+                pass
+                #print(f"root {root} allready exists in node")
+                # #PROVISIIIIOOONALLLLLL!!!!!
+                # node.roots.append(root)
+                # node.save()
+            else:
+                node.roots.append(root)
+                node.save()
+            return root
         #IF Node_type is not specify: DO nothing
         if node_type == None and node_type_id == 0:
             print("specify the node_type")
@@ -100,7 +118,8 @@ class Data_service():
         
         node = Node.objects(name = name).first()
         if node != None:
-            print("all ready exists")
+            print(f"node {node.name}, all ready exists")
+            root = register_root(node= node, root = root)
             return node
         else:
             pass
@@ -108,13 +127,11 @@ class Data_service():
         node = Node()
         node.name = name
         node.node_type_id = node_type.id
-        node.save()    
+        root = register_root(node = node, root = root)
+        node.save()
             
         node_type.nodes.append(node.id)
         node_type.save()
-
-
-
         return node
 
 
@@ -129,7 +146,7 @@ class Data_service():
         #IF space all ready exists: DO nothing
         space = Space.objects(name = name).first()
         if space != None:
-            print("all ready exists")
+            print(f"space: {space.name}, all ready exists")
             return space
         else:
             pass
@@ -165,9 +182,13 @@ class Data_service():
             space = Space.objects(id = space_id).first()
 
         #IF tweet exist: DO nothing
-        if Tweet.objects(tweet_id = tweet_id).first() != None:
-            print("all ready exists")
-            return None
+        tweet = Tweet.objects(tweet_id = tweet_id).first()
+        if tweet != None:
+            if tweet.space_id == space.id:
+                print("all ready exists")
+                return None
+            else:
+                pass
         else:
             pass
         
@@ -195,7 +216,7 @@ class Data_service():
 
 
     
-    def register_hashtag_tweet(self, node: Node, tweet: Tweet) -> Tweet:
+    def register_hashtag_tweet(self, node_id: str, tweet: Tweet) -> Tweet:
         """ register the hashtag node created on the tweeter
             *args:
                 node: Node
@@ -203,7 +224,7 @@ class Data_service():
                 tweet: Tweet
         
          """
-        tweet.hashtag_nodes.append(node.id)
+        tweet.hashtag_nodes.append(node_id)
         tweet.save()
         return tweet
     
@@ -247,4 +268,49 @@ class Data_service():
          """
         space = Space.objects(name = name).first()
         return space
+    
+    def get_nodes_with_roots(self, node_type: Node_type, root1: Space, root2: Space):
+        """ 
+        this method will return the allowed nodes, due to the rule
+        that the nodes have to be more than one root
+            *args:
+                node_type: Node_type
+                root1: Space.id
+                root2: Space.id
+            return:
+                list(node_id): list(int)
+        """
+        print("entry to roots")
+        nodes = Node.objects().all() \
+            .filter(node_type_id=node_type.id)\
+            .filter(roots__1__exists =True)\
+            .filter(roots = root2.id)\
+            .filter(roots = root1.id)
+        print("it works!!!!!!!!! to find the root")
+        #.filter(roots__1__exists =True)\
+        return list(nodes)
+
+    def get_node(self, node_id: str) -> Node:
+        node = Node.objects(id = node_id).first()
+        return node
+
+    def get_io_tweets(self, space: Space):
+        """ 
+        this method finds the minimum and max.
+        id of the tweets in db
+            *args:
+                space: Space
+            return:
+                (mayor_id, minor_id): () 
+        """
+        tweets = Tweet.objects().all()
+        tweets_ids = [iTweet.tweet_id for iTweet in tweets]
+        tweets_sorted_ids = np.sort(tweets_ids)
+        mayor_id = tweets_sorted_ids[-1] 
+        minor_id = tweets_sorted_ids[0]
+        print("mayor, minor")
+        print(mayor_id, minor_id)
+        return (mayor_id, minor_id)
+
+
 

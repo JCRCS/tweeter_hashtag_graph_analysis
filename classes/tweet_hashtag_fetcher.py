@@ -12,7 +12,6 @@ class Tweet_hastag_fetcher():
         self.data_svc = Data_service()
         self.tweeter_api = self.tweeter_init()
         searched_tweets = [] 
-        self.space = space
         pass
     
 
@@ -20,9 +19,9 @@ class Tweet_hastag_fetcher():
         print("hello_world")
         self.periodic_work_cursor(30)
 
-    def one_run(self):  
+    def one_run(self, space: Space, query = "guatemala"):  
         print("test fetcher (one_work)")
-        self.one_work_cursor(5)
+        self.periodic_work_cursor(interval = 30, query = query, space = space, last_id= 0)
         
         
         
@@ -45,18 +44,26 @@ class Tweet_hastag_fetcher():
         mytime += timedelta(hours=1)   # the tweets are timestamped in GMT timezone, while I am in +1 timezone
         return (mytime.strftime("%Y-%m-%d %H_%M_%S")) 
 
-    def periodic_work_cursor(self, interval = 30):
+    def periodic_work_cursor(self, space: Space, interval = 30, query= "guatemala", last_id = 0):
         work_space = '.\\storage\\'
         file_name = work_space+'tweet'+str(datetime.datetime.now().strftime("%Y-%m-%d %H_%M_%S"))
-        last_id = 0
         fetch_count = 0
-        while True:
-            last_id = self.get_twitter_data_cursor(last_id = last_id, since_date= "2019-06-7", file_name= file_name)
+        count_empty = 0
+        major_id, minor_id = self.data_svc.get_io_tweets(space = space)
+        while count_empty<35:
+            old_last_id = last_id
+            last_id = self.get_twitter_data_cursor(major_id = major_id, minor_id = minor_id, last_id = last_id, since_date= "2019-02-1", file_name= file_name, query= query, space = space)
+            if last_id == old_last_id:
+                count_empty += 1
+                print(f"count_empty: {count_empty}")
+            else:
+                count_empty = 0
             time.sleep(interval)
             fetch_count += 1
             print("fetch count: ", fetch_count)
     
-    def one_work_cursor(self, interval = 30):
+    def one_work_cursor(self, space: Space, interval = 30, query= "guatemala"):
+        print(f"making query = {query}")
         work_space = '.\\storage\\'
         file_name = work_space+'tweet'+str(datetime.datetime.now().strftime("%Y-%m-%d %H_%M_%S"))
         last_id = 0
@@ -64,16 +71,16 @@ class Tweet_hastag_fetcher():
         #get max tweet id 
         # get min tweet id 
         #
-        last_id = self.get_twitter_data_cursor(last_id = last_id, since_date= "2019-06-9", file_name= file_name)
+        last_id = self.get_twitter_data_cursor(last_id = last_id, since_date= "2019-06-9", file_name= file_name, query= query, space = space)
         time.sleep(interval)
         fetch_count += 1
         print("fetch count: ", fetch_count)
 
     # get data every couple of minutes
-    def get_twitter_data_cursor(self, last_id = -1, since_date = "2019-06-07", file_name = "tweet_aux"):
+    def get_twitter_data_cursor(self,space: Space, last_id = 0, since_date = "2019-06-07", file_name = "tweet_aux", query = "guatemala", major_id = "0", minor_id = "0"):
         since_date = since_date
         last_id = last_id
-        query = "guatemala"
+        query = query
         max_tweets = 10
         max_id = 0
         searched_tweets = []
@@ -85,6 +92,36 @@ class Tweet_hastag_fetcher():
             #count = max_tweets - len(searched_tweets)
         print("last_id: ",str(last_id))
         try:
+            # if last_id == 0:
+            #     print("I have to get actualiced")
+            #     new_tweets = tweepy.Cursor(self.tweeter_api.search,
+            #                     tweet_mode='extended',
+            #                     q=query,
+            #                     count=max_tweets,
+            #                     lang = "es",
+            #                     since= since_date,
+            #                     since_id = major_id).items()
+            # elif last_id > int(major_id):
+            #     print("i'm between the actial tweet and the last one fetched")
+            #     new_tweets = tweepy.Cursor(self.tweeter_api.search,
+            #                     tweet_mode='extended',
+            #                     q=query,
+            #                     count=max_tweets,
+            #                     lang = "es",
+            #                     since= since_date,
+            #                     max_id = str(last_id),
+            #                     since_id = major_id).items()
+            # elif last_id == int(major_id):
+            #     print("i'm up to date i will continue")
+            #     new_tweets = tweepy.Cursor(self.tweeter_api.search,
+            #                     tweet_mode='extended',
+            #                     q=query,
+            #                     count=max_tweets,
+            #                     lang = "es",
+            #                     since= since_date,
+            #                     max_id = minor_id).items()
+            # else:
+            #     print("i'm up to date i will continue")
             new_tweets = tweepy.Cursor(self.tweeter_api.search,
                             tweet_mode='extended',
                             q=query,
@@ -102,27 +139,30 @@ class Tweet_hastag_fetcher():
             # to keep things simple, we will give up on an error
             print (e)
         twit_count = 0
-        for tweet in searched_tweets:
-            #print (tweet)
-            #print(tweet if (twit_count == 0) else "")
-            
-            max_id = tweet.id
-            (print("initial id: ",max_id) if twit_count == 0 else "")
-            author_info = {"name": tweet.author.name, "location": tweet.author.location}
-            #date of creation / tweet id / author info / hastags / symbols / urls / retweet / text
-            #csvWriter.writerow([tweet.created_at, tweet.id, author_info, tweet.entities["hashtags"], tweet.entities["symbols"], tweet.entities["urls"], tweet.retweet_count, tweet.full_text.encode('utf-8')])
-            self.data_svc.register_tweet(
-                            space = self.space,
-                            tweet_id = str(tweet.id),
-                            tweet_date = tweet.created_at, 
-                            author_info = author_info, 
-                            hashtag = tweet.entities["hashtags"], 
-                            symbols = tweet.entities["symbols"], 
-                            urls = tweet.entities["urls"], 
-                            user_mensions = tweet.entities["user_mentions"], 
-                            retweet = tweet.retweet_count, 
-                            text = str(tweet.full_text.encode('utf-8')))
-            twit_count += 1
+        try:
+            for tweet in searched_tweets:
+                #print (tweet)
+                #print(tweet if (twit_count == 0) else "")
+                
+                max_id = tweet.id
+                (print("initial id: ",max_id) if twit_count == 0 else "")
+                author_info = {"name": tweet.author.name, "location": tweet.author.location}
+                #date of creation / tweet id / author info / hastags / symbols / urls / retweet / text
+                #csvWriter.writerow([tweet.created_at, tweet.id, author_info, tweet.entities["hashtags"], tweet.entities["symbols"], tweet.entities["urls"], tweet.retweet_count, tweet.full_text.encode('utf-8')])
+                self.data_svc.register_tweet(
+                                space = space,
+                                tweet_id = str(tweet.id),
+                                tweet_date = tweet.created_at, 
+                                author_info = author_info, 
+                                hashtag = tweet.entities["hashtags"], 
+                                symbols = tweet.entities["symbols"], 
+                                urls = tweet.entities["urls"], 
+                                user_mensions = tweet.entities["user_mentions"], 
+                                retweet = tweet.retweet_count, 
+                                text = str(tweet.full_text.encode('utf-8')))
+                twit_count += 1
+        except:
+            print("error_ lets continue")
         
         csvFile.close()
         #max_id = searched_tweets.page_iterator[]
