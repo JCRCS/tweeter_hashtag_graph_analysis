@@ -31,6 +31,7 @@ there will be an menu and you have to follow the steps and you are ready to go.
 
 ## Tool classes design
 
+![alt text](https://github.com/JCRCS/tweeter_hashtag_graph_analysis/blob/master/Storage/classes-model.png)
 
 
 ## Contributing
