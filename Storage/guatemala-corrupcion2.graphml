@@ -1,0 +1,441 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <graph edgedefault="undirected">
+    <node id="Milenio" />
+    <node id="EdwinEscobarGT" />
+    <node id="ProsperidadGua" />
+    <node id="CDMX" />
+    <node id="lopezobrador_" />
+    <node id="AristeguiOnline" />
+    <node id="México" />
+    <node id="GobiernoMX" />
+    <node id="prensa_libre" />
+    <node id="Claudiashein" />
+    <node id="FelizMiercoles" />
+    <node id="ElMundoSV" />
+    <node id="fulloa51" />
+    <node id="nayibbukele" />
+    <node id="chioreya" />
+    <node id="MXvsCORRUPCION" />
+    <node id="rfef" />
+    <node id="abc_es" />
+    <node id="Puebla" />
+    <node id="DDHH" />
+    <node id="Veracruz" />
+    <node id="El_Universal_Mx" />
+    <node id="ferbelaunzaran" />
+    <node id="vpelsalvador" />
+    <node id="CNNEE" />
+    <node id="Venezuela" />
+    <node id="12Jun" />
+    <node id="Mexico" />
+    <node id="ElFinanciero_Mx" />
+    <node id="Internacionales" />
+    <node id="Reforma" />
+    <node id="AgustinLaje" />
+    <node id="Oaxaca" />
+    <node id="estebangerbasi" />
+    <node id="SalitaSin" />
+    <node id="BluRadioCo" />
+    <node id="EUElecciones2019" />
+    <node id="MPguatemala" />
+    <node id="TournoiMRevello" />
+    <node id="eldiarioes" />
+    <node id="Guatevision_tv" />
+    <node id="13Jun" />
+    <node id="relato_gt" />
+    <node id="Roboaguilar" />
+    <node id="Criptomonedas" />
+    <node id="InstitutoCato" />
+    <node id="An0nymous_GT" />
+    <node id="ManfredoGuate" />
+    <node id="realDonaldTrump" />
+    <node id="sanchezcastejon" />
+    <node id="CaraotaDigital" />
+    <node id="DeniseMaerker" />
+    <node id="ClaudioXGG" />
+    <node id="LeonKrauze" />
+    <node id="DHSgov" />
+    <node id="AHORA" />
+    <node id="marianoruizmdq" />
+    <node id="HsilvAvalos" />
+    <node id="SAT" />
+    <node id="mmendoza_GT" />
+    <node id="Legan_ki" />
+    <node id="dw_espanol" />
+    <node id="mariottoro" />
+    <node id="DrsergioHernan3" />
+    <node id="Guadalajara" />
+    <node id="elnacionalcat" />
+    <node id="PRI_Nacional" />
+    <node id="m_ebrard" />
+    <node id="PublinewsGT" />
+    <node id="Argentina" />
+    <node id="Forbes_Mexico" />
+    <node id="vampipe" />
+    <node id="Colombia" />
+    <node id="El_andarin" />
+    <node id="lopezdoriga" />
+    <node id="fabbiolaCastro" />
+    <node id="GuatemalaGob" />
+    <node id="Galdamez_Kaibil" />
+    <node id="sandrajovel6" />
+    <node id="SupportBitkovs" />
+    <node id="TrabajoInfantil" />
+    <node id="FelizMiércoles" />
+    <node id="4T" />
+    <node id="lahoragt" />
+    <node id="SCJN" />
+    <node id="RepublicaDominicana" />
+    <node id="samuel_garcias" />
+    <node id="Honduras" />
+    <node id="SenRubioPress" />
+    <node id="SecPompeo" />
+    <node id="EncuentroGuate" />
+    <node id="M_OlgaSCordero" />
+    <node id="Bolivia" />
+    <node id="Guatemala" />
+    <node id="VicGarciaNou" />
+    <node id="Elecciones2019" />
+    <node id="CICIGgt" />
+    <node id="SandraTorresGUA" />
+    <node id="Ecuador" />
+    <node id="Perico8461" />
+    <node id="InformaTVX" />
+    <node id="econokafka" />
+    <node id="Presidente" />
+    <node id="jimmymoralesgt" />
+    <node id="Ivan_Velasquez_" />
+    <node id="nytimeses" />
+    <node id="EmisorasUnidas" />
+    <node id="samuel_pz" />
+    <node id="Panama" />
+    <node id="JC_Varela" />
+    <node id="España" />
+    <node id="ElijoDignidad" />
+    <node id="HijasDeLaMx" />
+    <node id="Negocios" />
+    <node id="Veliz_Ciudad" />
+    <node id="PNC_SV" />
+    <node id="adn40" />
+    <node id="jorgeramosnews" />
+    <node id="Foro_TV" />
+    <node id="YouTube" />
+    <node id="ElCambioLoHacemosJuntos" />
+    <node id="EnVivo" />
+    <node id="Elecciones" />
+    <node id="patriciasandogt" />
+    <node id="ilegalidad" />
+    <node id="Cuba" />
+    <node id="AdrianSoto_EU" />
+    <node id="fernvampi" />
+    <node id="MovimientoWinaq" />
+    <node id="RgoBobby" />
+    <node id="VolcancitoVisto" />
+    <node id="Jackskinripper" />
+    <node id="Entérate" />
+    <node id="FelizJueves" />
+    <node id="DanielHabif" />
+    <node id="ldpsincomplejos" />
+    <node id="AlMomento" />
+    <node id="MaciasSalazar5" />
+    <node id="TrueNewsDInforma" />
+    <node id="cristobalsoria" />
+    <node id="alexguimaborges" />
+    <edge source="EdwinEscobarGT" target="ProsperidadGua" />
+    <edge source="CDMX" target="Claudiashein" />
+    <edge source="CDMX" target="Mexico" />
+    <edge source="CDMX" target="Guadalajara" />
+    <edge source="CDMX" target="Puebla" />
+    <edge source="CDMX" target="Veracruz" />
+    <edge source="CDMX" target="Venezuela" />
+    <edge source="CDMX" target="Argentina" />
+    <edge source="CDMX" target="Ecuador" />
+    <edge source="CDMX" target="Bolivia" />
+    <edge source="CDMX" target="Colombia" />
+    <edge source="CDMX" target="Guatemala" />
+    <edge source="CDMX" target="Panama" />
+    <edge source="CDMX" target="España" />
+    <edge source="lopezobrador_" target="Claudiashein" />
+    <edge source="lopezobrador_" target="ferbelaunzaran" />
+    <edge source="lopezobrador_" target="Mexico" />
+    <edge source="lopezobrador_" target="Reforma" />
+    <edge source="lopezobrador_" target="El_Universal_Mx" />
+    <edge source="lopezobrador_" target="GobiernoMX" />
+    <edge source="lopezobrador_" target="LeonKrauze" />
+    <edge source="lopezobrador_" target="DHSgov" />
+    <edge source="lopezobrador_" target="4T" />
+    <edge source="lopezobrador_" target="M_OlgaSCordero" />
+    <edge source="lopezobrador_" target="AristeguiOnline" />
+    <edge source="lopezobrador_" target="m_ebrard" />
+    <edge source="lopezobrador_" target="SCJN" />
+    <edge source="lopezobrador_" target="DanielHabif" />
+    <edge source="lopezobrador_" target="nytimeses" />
+    <edge source="lopezobrador_" target="HijasDeLaMx" />
+    <edge source="lopezobrador_" target="adn40" />
+    <edge source="lopezobrador_" target="ElFinanciero_Mx" />
+    <edge source="lopezobrador_" target="econokafka" />
+    <edge source="lopezobrador_" target="realDonaldTrump" />
+    <edge source="lopezobrador_" target="nayibbukele" />
+    <edge source="lopezobrador_" target="sanchezcastejon" />
+    <edge source="lopezobrador_" target="jimmymoralesgt" />
+    <edge source="lopezobrador_" target="Jackskinripper" />
+    <edge source="lopezobrador_" target="ClaudioXGG" />
+    <edge source="lopezobrador_" target="Forbes_Mexico" />
+    <edge source="AristeguiOnline" target="MXvsCORRUPCION" />
+    <edge source="AristeguiOnline" target="DeniseMaerker" />
+    <edge source="AristeguiOnline" target="lopezdoriga" />
+    <edge source="AristeguiOnline" target="Reforma" />
+    <edge source="AristeguiOnline" target="M_OlgaSCordero" />
+    <edge source="México" target="GobiernoMX" />
+    <edge source="México" target="Veracruz" />
+    <edge source="México" target="EnVivo" />
+    <edge source="México" target="InformaTVX" />
+    <edge source="México" target="Honduras" />
+    <edge source="México" target="Guatemala" />
+    <edge source="México" target="Oaxaca" />
+    <edge source="México" target="Argentina" />
+    <edge source="México" target="Bolivia" />
+    <edge source="México" target="Colombia" />
+    <edge source="México" target="Cuba" />
+    <edge source="México" target="Ecuador" />
+    <edge source="México" target="España" />
+    <edge source="México" target="Venezuela" />
+    <edge source="GobiernoMX" target="Mexico" />
+    <edge source="GobiernoMX" target="Guatemala" />
+    <edge source="GobiernoMX" target="jimmymoralesgt" />
+    <edge source="GobiernoMX" target="nayibbukele" />
+    <edge source="GobiernoMX" target="HijasDeLaMx" />
+    <edge source="GobiernoMX" target="Jackskinripper" />
+    <edge source="GobiernoMX" target="SCJN" />
+    <edge source="GobiernoMX" target="ClaudioXGG" />
+    <edge source="prensa_libre" target="MPguatemala" />
+    <edge source="prensa_libre" target="Guatemala" />
+    <edge source="prensa_libre" target="mariottoro" />
+    <edge source="prensa_libre" target="An0nymous_GT" />
+    <edge source="prensa_libre" target="Guatevision_tv" />
+    <edge source="Claudiashein" target="ferbelaunzaran" />
+    <edge source="Claudiashein" target="Mexico" />
+    <edge source="Claudiashein" target="HijasDeLaMx" />
+    <edge source="Claudiashein" target="ElFinanciero_Mx" />
+    <edge source="Claudiashein" target="Veracruz" />
+    <edge source="Claudiashein" target="Guatemala" />
+    <edge source="Claudiashein" target="4T" />
+    <edge source="Claudiashein" target="vampipe" />
+    <edge source="ElMundoSV" target="fulloa51" />
+    <edge source="ElMundoSV" target="nayibbukele" />
+    <edge source="ElMundoSV" target="InformaTVX" />
+    <edge source="fulloa51" target="nayibbukele" />
+    <edge source="fulloa51" target="vpelsalvador" />
+    <edge source="fulloa51" target="CNNEE" />
+    <edge source="nayibbukele" target="RepublicaDominicana" />
+    <edge source="nayibbukele" target="PNC_SV" />
+    <edge source="nayibbukele" target="m_ebrard" />
+    <edge source="nayibbukele" target="realDonaldTrump" />
+    <edge source="nayibbukele" target="sanchezcastejon" />
+    <edge source="nayibbukele" target="jimmymoralesgt" />
+    <edge source="nayibbukele" target="fabbiolaCastro" />
+    <edge source="nayibbukele" target="HijasDeLaMx" />
+    <edge source="nayibbukele" target="Forbes_Mexico" />
+    <edge source="chioreya" target="MaciasSalazar5" />
+    <edge source="Puebla" target="Mexico" />
+    <edge source="Puebla" target="Guadalajara" />
+    <edge source="Puebla" target="Veracruz" />
+    <edge source="Puebla" target="Venezuela" />
+    <edge source="Puebla" target="Argentina" />
+    <edge source="Puebla" target="Ecuador" />
+    <edge source="Puebla" target="Bolivia" />
+    <edge source="Puebla" target="Colombia" />
+    <edge source="Puebla" target="Guatemala" />
+    <edge source="Puebla" target="Panama" />
+    <edge source="Puebla" target="España" />
+    <edge source="DDHH" target="Guatemala" />
+    <edge source="Veracruz" target="Guatemala" />
+    <edge source="Veracruz" target="Honduras" />
+    <edge source="Veracruz" target="Mexico" />
+    <edge source="Veracruz" target="Guadalajara" />
+    <edge source="Veracruz" target="Venezuela" />
+    <edge source="Veracruz" target="Argentina" />
+    <edge source="Veracruz" target="Ecuador" />
+    <edge source="Veracruz" target="Bolivia" />
+    <edge source="Veracruz" target="Colombia" />
+    <edge source="Veracruz" target="Panama" />
+    <edge source="Veracruz" target="España" />
+    <edge source="Veracruz" target="4T" />
+    <edge source="Veracruz" target="vampipe" />
+    <edge source="ferbelaunzaran" target="LeonKrauze" />
+    <edge source="vpelsalvador" target="CNNEE" />
+    <edge source="CNNEE" target="mariottoro" />
+    <edge source="Venezuela" target="12Jun" />
+    <edge source="Venezuela" target="13Jun" />
+    <edge source="Venezuela" target="Argentina" />
+    <edge source="Venezuela" target="Bolivia" />
+    <edge source="Venezuela" target="Colombia" />
+    <edge source="Venezuela" target="Guatemala" />
+    <edge source="Venezuela" target="Honduras" />
+    <edge source="Venezuela" target="Mexico" />
+    <edge source="Venezuela" target="Ecuador" />
+    <edge source="Venezuela" target="Guadalajara" />
+    <edge source="Venezuela" target="Panama" />
+    <edge source="Venezuela" target="España" />
+    <edge source="Venezuela" target="Oaxaca" />
+    <edge source="Venezuela" target="Cuba" />
+    <edge source="12Jun" target="CaraotaDigital" />
+    <edge source="12Jun" target="Internacionales" />
+    <edge source="Mexico" target="Guatemala" />
+    <edge source="Mexico" target="Argentina" />
+    <edge source="Mexico" target="Bolivia" />
+    <edge source="Mexico" target="Colombia" />
+    <edge source="Mexico" target="Honduras" />
+    <edge source="Mexico" target="Ecuador" />
+    <edge source="Mexico" target="Guadalajara" />
+    <edge source="Mexico" target="Panama" />
+    <edge source="Mexico" target="España" />
+    <edge source="Mexico" target="Cuba" />
+    <edge source="Mexico" target="Criptomonedas" />
+    <edge source="Reforma" target="DeniseMaerker" />
+    <edge source="Reforma" target="lopezdoriga" />
+    <edge source="Oaxaca" target="Argentina" />
+    <edge source="Oaxaca" target="Bolivia" />
+    <edge source="Oaxaca" target="Colombia" />
+    <edge source="Oaxaca" target="Cuba" />
+    <edge source="Oaxaca" target="Ecuador" />
+    <edge source="Oaxaca" target="España" />
+    <edge source="Oaxaca" target="Guatemala" />
+    <edge source="Oaxaca" target="Honduras" />
+    <edge source="EUElecciones2019" target="MPguatemala" />
+    <edge source="EUElecciones2019" target="Elecciones2019" />
+    <edge source="EUElecciones2019" target="Guatemala" />
+    <edge source="EUElecciones2019" target="EmisorasUnidas" />
+    <edge source="MPguatemala" target="relato_gt" />
+    <edge source="MPguatemala" target="GuatemalaGob" />
+    <edge source="MPguatemala" target="Galdamez_Kaibil" />
+    <edge source="MPguatemala" target="sandrajovel6" />
+    <edge source="MPguatemala" target="CICIGgt" />
+    <edge source="MPguatemala" target="Guatemala" />
+    <edge source="MPguatemala" target="Roboaguilar" />
+    <edge source="MPguatemala" target="jimmymoralesgt" />
+    <edge source="MPguatemala" target="Ivan_Velasquez_" />
+    <edge source="MPguatemala" target="lahoragt" />
+    <edge source="MPguatemala" target="ManfredoGuate" />
+    <edge source="MPguatemala" target="mmendoza_GT" />
+    <edge source="MPguatemala" target="El_andarin" />
+    <edge source="TournoiMRevello" target="AlMomento" />
+    <edge source="Guatevision_tv" target="An0nymous_GT" />
+    <edge source="Roboaguilar" target="jimmymoralesgt" />
+    <edge source="Roboaguilar" target="Ivan_Velasquez_" />
+    <edge source="Roboaguilar" target="CICIGgt" />
+    <edge source="Criptomonedas" target="Colombia" />
+    <edge source="Criptomonedas" target="Argentina" />
+    <edge source="An0nymous_GT" target="El_andarin" />
+    <edge source="ManfredoGuate" target="EncuentroGuate" />
+    <edge source="ManfredoGuate" target="VicGarciaNou" />
+    <edge source="realDonaldTrump" target="econokafka" />
+    <edge source="realDonaldTrump" target="m_ebrard" />
+    <edge source="realDonaldTrump" target="sanchezcastejon" />
+    <edge source="sanchezcastejon" target="m_ebrard" />
+    <edge source="CaraotaDigital" target="Guatemala" />
+    <edge source="DeniseMaerker" target="lopezdoriga" />
+    <edge source="ClaudioXGG" target="Jackskinripper" />
+    <edge source="ClaudioXGG" target="SCJN" />
+    <edge source="LeonKrauze" target="DHSgov" />
+    <edge source="LeonKrauze" target="m_ebrard" />
+    <edge source="AHORA" target="Guatemala" />
+    <edge source="HsilvAvalos" target="Guatemala" />
+    <edge source="SAT" target="Guatemala" />
+    <edge source="mmendoza_GT" target="patriciasandogt" />
+    <edge source="dw_espanol" target="Elecciones" />
+    <edge source="dw_espanol" target="Guatemala" />
+    <edge source="Guadalajara" target="Argentina" />
+    <edge source="Guadalajara" target="Ecuador" />
+    <edge source="Guadalajara" target="Bolivia" />
+    <edge source="Guadalajara" target="Colombia" />
+    <edge source="Guadalajara" target="Guatemala" />
+    <edge source="Guadalajara" target="Panama" />
+    <edge source="Guadalajara" target="España" />
+    <edge source="PRI_Nacional" target="SCJN" />
+    <edge source="PRI_Nacional" target="m_ebrard" />
+    <edge source="m_ebrard" target="Entérate" />
+    <edge source="m_ebrard" target="Guatemala" />
+    <edge source="Argentina" target="Bolivia" />
+    <edge source="Argentina" target="Colombia" />
+    <edge source="Argentina" target="Honduras" />
+    <edge source="Argentina" target="Guatemala" />
+    <edge source="Argentina" target="España" />
+    <edge source="Argentina" target="Ecuador" />
+    <edge source="Argentina" target="Panama" />
+    <edge source="Argentina" target="Cuba" />
+    <edge source="vampipe" target="Guatemala" />
+    <edge source="vampipe" target="4T" />
+    <edge source="Colombia" target="ilegalidad" />
+    <edge source="Colombia" target="Guatemala" />
+    <edge source="Colombia" target="Honduras" />
+    <edge source="Colombia" target="Ecuador" />
+    <edge source="Colombia" target="España" />
+    <edge source="Colombia" target="Bolivia" />
+    <edge source="Colombia" target="Panama" />
+    <edge source="Colombia" target="Cuba" />
+    <edge source="El_andarin" target="CICIGgt" />
+    <edge source="GuatemalaGob" target="Galdamez_Kaibil" />
+    <edge source="GuatemalaGob" target="sandrajovel6" />
+    <edge source="Galdamez_Kaibil" target="sandrajovel6" />
+    <edge source="Galdamez_Kaibil" target="SandraTorresGUA" />
+    <edge source="SupportBitkovs" target="Perico8461" />
+    <edge source="SupportBitkovs" target="EnVivo" />
+    <edge source="SupportBitkovs" target="Guatemala" />
+    <edge source="SupportBitkovs" target="CICIGgt" />
+    <edge source="TrabajoInfantil" target="Guatemala" />
+    <edge source="FelizMiércoles" target="adn40" />
+    <edge source="4T" target="Guatemala" />
+    <edge source="SCJN" target="Jackskinripper" />
+    <edge source="RepublicaDominicana" target="Guatemala" />
+    <edge source="RepublicaDominicana" target="Panama" />
+    <edge source="Honduras" target="Guatemala" />
+    <edge source="Honduras" target="Ecuador" />
+    <edge source="Honduras" target="Negocios" />
+    <edge source="Honduras" target="Bolivia" />
+    <edge source="Honduras" target="Cuba" />
+    <edge source="Honduras" target="España" />
+    <edge source="SenRubioPress" target="SecPompeo" />
+    <edge source="Bolivia" target="Guatemala" />
+    <edge source="Bolivia" target="España" />
+    <edge source="Bolivia" target="Ecuador" />
+    <edge source="Bolivia" target="Panama" />
+    <edge source="Bolivia" target="Cuba" />
+    <edge source="Guatemala" target="Elecciones" />
+    <edge source="Guatemala" target="Ecuador" />
+    <edge source="Guatemala" target="Presidente" />
+    <edge source="Guatemala" target="Panama" />
+    <edge source="Guatemala" target="España" />
+    <edge source="Guatemala" target="SandraTorresGUA" />
+    <edge source="Guatemala" target="Negocios" />
+    <edge source="Guatemala" target="Elecciones2019" />
+    <edge source="Guatemala" target="jimmymoralesgt" />
+    <edge source="Guatemala" target="EnVivo" />
+    <edge source="Guatemala" target="ilegalidad" />
+    <edge source="Guatemala" target="Cuba" />
+    <edge source="Guatemala" target="Entérate" />
+    <edge source="Guatemala" target="MovimientoWinaq" />
+    <edge source="Guatemala" target="EmisorasUnidas" />
+    <edge source="Guatemala" target="adn40" />
+    <edge source="Guatemala" target="ElijoDignidad" />
+    <edge source="Elecciones2019" target="ElCambioLoHacemosJuntos" />
+    <edge source="Elecciones2019" target="EmisorasUnidas" />
+    <edge source="CICIGgt" target="Ivan_Velasquez_" />
+    <edge source="CICIGgt" target="jimmymoralesgt" />
+    <edge source="Ecuador" target="Panama" />
+    <edge source="Ecuador" target="España" />
+    <edge source="Ecuador" target="Cuba" />
+    <edge source="jimmymoralesgt" target="EmisorasUnidas" />
+    <edge source="jimmymoralesgt" target="AdrianSoto_EU" />
+    <edge source="jimmymoralesgt" target="Ivan_Velasquez_" />
+    <edge source="jimmymoralesgt" target="HijasDeLaMx" />
+    <edge source="Ivan_Velasquez_" target="samuel_pz" />
+    <edge source="EmisorasUnidas" target="AdrianSoto_EU" />
+    <edge source="Panama" target="España" />
+    <edge source="España" target="Cuba" />
+    <edge source="ElijoDignidad" target="VolcancitoVisto" />
+    <edge source="Negocios" target="FelizJueves" />
+    <edge source="patriciasandogt" target="fernvampi" />
+  </graph>
+</graphml>
